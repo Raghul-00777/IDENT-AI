@@ -279,9 +279,40 @@
       "file_size": 238678,
       "media_type": "image",
       "created_at": "2026-07-28T09:10:08.430Z"
+    },
+    {
+      "id": "6d8eaae4-aa8a-49c9-8cf4-032bbf7efc6b",
+      "user_id": null,
+      "filename": "spider-man-5120x2880-21603.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785231883919-spider-man-5120x2880-21603.jpg",
+      "file_size": 10379944,
+      "media_type": "image",
+      "created_at": "2026-07-28T09:44:43.924Z"
     }
   ],
   "predictions": [
+    {
+      "id": "95bd090c-2236-42df-998a-781015b0be46",
+      "upload_id": "6d8eaae4-aa8a-49c9-8cf4-032bbf7efc6b",
+      "prediction": "ORIGINAL / HUMAN",
+      "probability": 44,
+      "confidence": 44,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 1.71,
+      "analysis_summary": "Image inference completed with XceptionNet. The model judged the supplied image with probability 44% of being AI generated.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "modelConf": 0.44248253107070923
+      },
+      "filename": "spider-man-5120x2880-21603.jpg",
+      "file_size": 10379944,
+      "media_type": "image",
+      "report_id": "b540a8db-feee-4703-948f-937380a8a0c3",
+      "created_at": "2026-07-28T09:44:44.676Z"
+    },
     {
       "id": "e2094f4f-fdf7-4b9f-8015-bd9328473530",
       "upload_id": "1b70bfef-ecde-4469-aa3e-cdf1eab25350",
@@ -616,6 +647,12 @@
   ],
   "reports": [
     {
+      "id": "b540a8db-feee-4703-948f-937380a8a0c3",
+      "prediction_id": "95bd090c-2236-42df-998a-781015b0be46",
+      "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\b540a8db-feee-4703-948f-937380a8a0c3.pdf",
+      "created_at": "2026-07-28T09:44:44.746Z"
+    },
+    {
       "id": "fca34c54-eb2a-40fb-bc19-c2c2ffca08a1",
       "prediction_id": "e2094f4f-fdf7-4b9f-8015-bd9328473530",
       "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\fca34c54-eb2a-40fb-bc19-c2c2ffca08a1.pdf",
@@ -707,6 +744,12 @@
     }
   ],
   "logs": [
+    {
+      "id": "efb7fd1b-ac95-44e3-a043-58f76a843c6a",
+      "event": "prediction_created",
+      "details": "Prediction 95bd090c-2236-42df-998a-781015b0be46 -> ORIGINAL / HUMAN",
+      "created_at": "2026-07-28T09:44:44.753Z"
+    },
     {
       "id": "b52eef5e-a385-4df3-96d2-52e24a49709b",
       "event": "prediction_created",
