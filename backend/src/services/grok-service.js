@@ -11,17 +11,31 @@ export async function enrichWithGrok(predictionData) {
 
   const prompt = `Prediction: ${predictionData.prediction}\nConfidence: ${predictionData.confidence}%\nProbability: ${predictionData.probability}%\nMedia Type: ${predictionData.mediaType}\nSummary: ${predictionData.analysisSummary}\nRecommendations: ${predictionData.recommendations}\n\nGenerate a structured professional forensic explanation for this result. Return JSON with fields: explanation, riskLevel, recommendations, evidenceSummary, trustScore.`;
 
-  const response = await fetch(CONFIG.GROK_API_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${CONFIG.GROK_API_KEY}`,
-    },
-    body: JSON.stringify({ input: prompt, max_output_tokens: 400 }),
-  });
+  let response;
+  try {
+    response = await fetch(CONFIG.GROK_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${CONFIG.GROK_API_KEY}`,
+      },
+      body: JSON.stringify({ input: prompt, max_output_tokens: 400 }),
+    });
+  } catch (err) {
+    console.error('Grok API request error:', err);
+    return {
+      aiSummary: `Grok API request failed: ${err.message}`,
+      aiRisk: 'UNKNOWN',
+    };
+  }
 
   if (!response.ok) {
-    throw new Error(`Grok API request failed with status ${response.status}`);
+    const text = await response.text().catch(() => '');
+    console.error('Grok API returned non-OK status', response.status, text);
+    return {
+      aiSummary: `Grok API returned status ${response.status}. ${text}`,
+      aiRisk: 'UNKNOWN',
+    };
   }
 
   const data = await response.json();

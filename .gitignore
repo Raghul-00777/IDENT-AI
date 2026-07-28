@@ -3,5 +3,6 @@ node_modules
 dist
 .vercel
 backend/ident-ai.db
+backend/.env
 
 .vercel
