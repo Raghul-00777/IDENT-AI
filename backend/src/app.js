@@ -38,15 +38,26 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const distPath = path.resolve(__dirname, '..', '..', 'dist');
 const isVercel = Boolean(process.env.VERCEL);
-if (!isVercel && fs.existsSync(distPath)) {
-  console.log('Serving static files from', distPath, ' (dist exists)');
-  app.use(express.static(distPath));
-  // Serve HTML for any GET to support client-side routing
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(distPath, 'index.html'));
-  });
-} else if (process.env.NODE_ENV === 'production' && !isVercel) {
-  console.warn('Production mode but dist directory not found at', distPath);
+const isRender = Boolean(process.env.RENDER || process.env.RENDER_INTERNAL_HOSTNAME);
+
+if (!isVercel && !isRender) {
+  if (fs.existsSync(distPath)) {
+    console.log('Serving static files from', distPath, ' (dist exists)');
+    app.use(express.static(distPath));
+    // Serve HTML for any GET to support client-side routing
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(distPath, 'index.html'));
+    });
+  } else if (process.env.NODE_ENV === 'production') {
+    console.warn('Production mode but dist directory not found at', distPath);
+  }
+} else {
+  // ensure directories exist in ephemeral temp storage on serverless platforms
+  try {
+    ensureUploadDirs();
+  } catch (err) {
+    console.warn('Could not ensure upload dirs on serverless runtime:', err.message || err);
+  }
 }
 
 app.use((req, res) => {

@@ -4,6 +4,20 @@ const STORAGE_KEYS = {
   SETTINGS: 'ident-ai-settings',
 };
 
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+
+function makeApiUrl(path = '') {
+  const normalizedPath = path.replace(/^\/?/, '').replace(/\/+/g, '/');
+  const base = API_BASE_URL.trim().replace(/\/+$/, '');
+  if (!base) {
+    return `/api/${normalizedPath}`;
+  }
+  if (base.endsWith('/api')) {
+    return `${base}/${normalizedPath}`;
+  }
+  return `${base}/api/${normalizedPath}`;
+}
+
 function loadStore(key) {
   try {
     const raw = window.localStorage.getItem(key);
@@ -47,8 +61,9 @@ async function request(path, options = {}) {
     delete headers['Content-Type'];
   }
 
-  const response = await fetch(`/api${path}`, {
-    credentials: 'same-origin',
+  const url = makeApiUrl(path);
+  const response = await fetch(url, {
+    credentials: API_BASE_URL ? 'omit' : 'same-origin',
     ...options,
     headers,
   });
@@ -101,7 +116,8 @@ export async function analyzeMedia(file, modelKey = 'efficientnet') {
   const form = new FormData();
   form.append('file', file);
   form.append('modelKey', modelKey);
-  const response = await fetch('/api/detection/analyze', {
+  const analysisUrl = makeApiUrl('/detection/analyze');
+  const response = await fetch(analysisUrl, {
     method: 'POST',
     body: form,
   });

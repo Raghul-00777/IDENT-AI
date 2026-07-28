@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: ident-ai-backend
+    env: node
+    plan: free
+    branch: main
+    region: oregon
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CORS_ORIGINS
+        value: https://ident-ai-nine.vercel.app
+      - key: ADMIN_PASSWORD
+        value: IDENT AI
+      - key: JWT_SECRET
+        value: ident-ai-secret
+      - key: GROK_API_URL
+        value: https://api.grok.com/v1/responses

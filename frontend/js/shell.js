@@ -53,7 +53,20 @@ function initNavToggle() {
   const sidebarToggle = document.querySelector('.sidebar-toggle');
   const sidebar = document.querySelector('.sidebar');
   if (sidebarToggle && sidebar) {
-    sidebarToggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+    let backdrop = document.querySelector('.sidebar-backdrop');
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.className = 'sidebar-backdrop';
+      document.body.appendChild(backdrop);
+      backdrop.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        document.body.classList.remove('sidebar-active');
+      });
+    }
+    sidebarToggle.addEventListener('click', () => {
+      const open = sidebar.classList.toggle('open');
+      document.body.classList.toggle('sidebar-active', open);
+    });
   }
 }
 

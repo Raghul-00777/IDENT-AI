@@ -4,7 +4,6 @@ import { requireAdmin } from './admin-auth.js';
 import { signOut, getCurrentUser } from './api.js';
 
 export async function initAppShell(skipAuth = false, includeHome = true) {
-  initShell();
   let guard = { user: { email: 'admin@ident.ai' }, profile: { full_name: 'Administrator' }, role: 'admin' };
   if (!skipAuth) {
     guard = await requireAdmin();
@@ -17,6 +16,7 @@ export async function initAppShell(skipAuth = false, includeHome = true) {
   if (slot) {
     slot.outerHTML = renderShell(guard, includeHome);
   }
+  initShell();
   const signOutBtn = document.getElementById('signout-btn');
   if (signOutBtn) {
     signOutBtn.addEventListener('click', async () => {
@@ -26,7 +26,9 @@ export async function initAppShell(skipAuth = false, includeHome = true) {
 
   // Fetch backend health to detect if model/face detector are available
   try {
-    const res = await fetch('/api/health');
+    const apiBase = import.meta.env.VITE_API_BASE_URL ? import.meta.env.VITE_API_BASE_URL.trim().replace(/\/+$/, '') : '';
+    const healthUrl = apiBase ? (apiBase.endsWith('/api') ? `${apiBase}/health` : `${apiBase}/api/health`) : '/api/health';
+    const res = await fetch(healthUrl);
     const j = await res.json();
     if (j && j.data && (j.data.model_available === false || j.data.face_detector_available === false)) {
       const banner = document.createElement('div');
@@ -49,6 +51,7 @@ function renderShell(guard) {
   const role = guard.profile?.role || 'user';
   return `
   <div class="app-layout">
+    <button class="sidebar-toggle" type="button" aria-label="Open navigation">☰</button>
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-logo"><span class="logo-mark" style="width:28px;height:28px;border-radius:7px;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;color:#001018;font-weight:900;font-size:13px;">I</span> IDENT AI</div>
       <nav class="sidebar-nav">

@@ -8,6 +8,12 @@ export async function ensureUploadDirs() {
   });
 }
 
+export function ensureUploadDirsSync() {
+  [CONFIG.UPLOAD_DIR, CONFIG.REPORT_DIR, path.dirname(CONFIG.DB_PATH)].forEach((dir) => {
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  });
+}
+
 export function getTempPath(filename) {
   return path.join(CONFIG.UPLOAD_DIR, `${Date.now()}-${filename}`);
 }

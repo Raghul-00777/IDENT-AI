@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "ident-ai",
   "builds": [
     {
       "src": "package.json",
