@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deepfake Detection System — AI Forensics</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/index.html" class="nav-logo"><span class="logo-mark">I</span> IDENT AI</a>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/index.html#features">Features</a></li>
+      <li><a href="/index.html#technology">Technology</a></li>
+      <li><a href="/upload.html">Detection</a></li>
+      <li><a href="/history.html">Reports</a></li>
+      <li><a href="/index.html#about">About</a></li>
+      <li><a href="/index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="/login.html" class="btn btn-ghost">Login</a>
+      <a href="/register.html" class="btn btn-primary">Start Detection</a>
+      <button class="nav-toggle">☰</button>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span> AI-Driven Forensic Analysis Engine</div>
+      <h1>AI-Driven Deepfake<br />Detection System</h1>
+      <p>Enterprise-grade deep learning forensics for identifying AI-generated media. Analyze images and videos with multi-signal confidence scoring, generate certified PDF reports, and maintain a full audit trail.</p>
+      <div class="hero-actions">
+        <a href="/upload.html" class="btn btn-primary">Start Detection</a>
+        <a href="#features" class="btn btn-ghost">Explore</a>
+      </div>
+
+      <div class="hero-illustration">
+        <div class="neural-ring r1"></div>
+        <div class="neural-ring r2"></div>
+        <div class="neural-ring r3"></div>
+        <div class="neural-core"></div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="glass stat-card">
+          <div class="stat-value" data-count="98.4" data-suffix="%">0%</div>
+          <div class="stat-label">Detection Accuracy</div>
+        </div>
+        <div class="glass stat-card">
+          <div class="stat-value" data-count="12480" data-suffix="+">0</div>
+          <div class="stat-label">Files Scanned</div>
+        </div>
+        <div class="glass stat-card">
+          <div class="stat-value" data-count="5210" data-suffix="" style="color:var(--danger);text-shadow:0 0 16px rgba(255,75,92,0.4)">0</div>
+          <div class="stat-label">AI Generated</div>
+        </div>
+        <div class="glass stat-card">
+          <div class="stat-value" data-count="7270" data-suffix="" style="color:var(--accent);text-shadow:0 0 16px rgba(0,255,136,0.4)">0</div>
+          <div class="stat-label">Original Files</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="section-title">
+      <h2>Core Capabilities</h2>
+      <p>Multi-modal forensic analysis built on deep learning and signal-processing heuristics.</p>
+    </div>
+    <div class="features-grid">
+      <div class="glass feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Real-Time Inference</h3>
+        <p>Frequency-domain DCT analysis, sensor-noise residual estimation, and edge-sharpness profiling combine into a calibrated probability score in seconds.</p>
+      </div>
+      <div class="glass feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>Multi-Model Ensemble</h3>
+        <p>Pluggable architecture supports EfficientNet, XceptionNet, and ResNet50 backbones with a unified interface for future model replacement.</p>
+      </div>
+      <div class="glass feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Confidence Scoring</h3>
+        <p>Every prediction includes per-signal metrics, processing time, and an analysis summary with actionable recommendations.</p>
+      </div>
+      <div class="glass feature-card">
+        <div class="feature-icon">📄</div>
+        <h3>Certified PDF Reports</h3>
+        <p>Professional forensic reports with QR verification, probability graphs, thumbnails, and a unique report ID for chain-of-custody.</p>
+      </div>
+      <div class="glass feature-card">
+        <div class="feature-icon">🔐</div>
+        <h3>JWT Authentication</h3>
+        <p>Secure password hashing, role-based access (user/admin), and full audit logging of every detection and report.</p>
+      </div>
+      <div class="glass feature-card">
+        <div class="feature-icon">🎬</div>
+        <h3>Image & Video Support</h3>
+        <p>Upload images (jpg, png, webp) or videos (mp4, avi, mov, mkv). Video frames are extracted and analyzed individually, then combined.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="technology">
+    <div class="section-title">
+      <h2>Detection Pipeline</h2>
+      <p>From upload to verdict — every step of the forensic workflow.</p>
+    </div>
+    <div class="features-grid">
+      <div class="glass feature-card"><div class="feature-icon">1</div><h3>Upload & Validate</h3><p>Drag-and-drop or browse. File type and size validation runs on the client before any processing begins.</p></div>
+      <div class="glass feature-card"><div class="feature-icon">2</div><h3>Preprocessing</h3><p>Images are decoded and downscaled to 256×256. Videos are sampled into frames at uniform intervals.</p></div>
+      <div class="glass feature-card"><div class="feature-icon">3</div><h3>Feature Extraction</h3><p>DCT frequency energy, sensor-noise residual, color-channel consistency, and edge-sharpness distribution are computed per frame.</p></div>
+      <div class="glass feature-card"><div class="feature-icon">4</div><h3>Ensemble Scoring</h3><p>A weighted ensemble combines all signals through a calibrated sigmoid into a 0–1 probability of AI generation.</p></div>
+      <div class="glass feature-card"><div class="feature-icon">5</div><h3>Verdict & Report</h3><p>Results are persisted with full metrics, a PDF report is generated with QR verification, and the record enters your history.</p></div>
+      <div class="glass feature-card"><div class="feature-icon">6</div><h3>Audit & History</h3><p>Every action is logged. Search, filter, and re-download reports anytime from your dashboard.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="section-title">
+      <h2>About</h2>
+      <p>Forensic-grade media authentication for the synthetic-media era.</p>
+    </div>
+    <div class="glass" style="padding:40px;max-width:800px;margin:0 auto;text-align:center;">
+      <p style="color:var(--muted);font-size:16px;line-height:1.7;">
+        The AI-Driven Deepfake Detection System is a forensic platform designed for cyber-security analysts,
+        journalists, and legal teams who need to verify the authenticity of digital media. It combines multiple
+        signal-processing heuristics inspired by the deepfake-detection literature — frequency-domain analysis,
+        sensor-noise estimation, color consistency, and edge profiling — into a single calibrated score.
+        Every analysis is logged, every report is certified with a unique ID and QR code, and the entire system
+        is built on a modular architecture ready for cloud deployment.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="section-title">
+      <h2>Contact</h2>
+      <p>Reach the forensics team for enterprise deployments or integrations.</p>
+    </div>
+    <div class="glass" style="padding:40px;max-width:600px;margin:0 auto;">
+      <form id="contact-form" class="auth-form">
+        <div class="row"><label class="label">Name</label><input class="input" name="name" required /></div>
+        <div class="row"><label class="label">Email</label><input class="input" name="email" type="email" required /></div>
+        <div class="row"><label class="label">Message</label><textarea class="input" name="message" rows="4" required></textarea></div>
+        <button type="submit" class="btn btn-primary w-full">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer style="text-align:center;padding:40px 32px;color:var(--muted);font-size:13px;border-top:1px solid var(--glass-border);">
+    AI-Driven Deepfake Detection System · Forensic Analysis Engine · © 2026
+  </footer>
+
+  <script type="module">
+    import { initShell } from '/js/shell.js';
+    import { showToast } from '/js/notify.js';
+    initShell();
+
+    // Animated counters
+    document.querySelectorAll('[data-count]').forEach((el) => {
+      const target = parseFloat(el.dataset.count);
+      const suffix = el.dataset.suffix || '';
+      const isFloat = target % 1 !== 0;
+      let cur = 0;
+      const step = target / 60;
+      const tick = () => {
+        cur += step;
+        if (cur >= target) { cur = target; }
+        el.textContent = (isFloat ? cur.toFixed(1) : Math.floor(cur).toLocaleString()) + suffix;
+        if (cur < target) requestAnimationFrame(tick);
+      };
+      tick();
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('Message sent. The forensics team will respond within 24 hours.', 'success');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>

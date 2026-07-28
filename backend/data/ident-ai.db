@@ -1,0 +1,801 @@
+{
+  "users": [],
+  "uploads": [
+    {
+      "id": "0054ce98-30d9-438a-aed6-dd90e4c09591",
+      "user_id": null,
+      "filename": "test.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785211802652-test.jpg",
+      "file_size": 199,
+      "media_type": "image",
+      "created_at": "2026-07-28T04:10:02.660Z"
+    },
+    {
+      "id": "834f1bc7-3b8e-49df-8c68-a9bcefa1a138",
+      "user_id": null,
+      "filename": "test.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785211837176-test.jpg",
+      "file_size": 199,
+      "media_type": "image",
+      "created_at": "2026-07-28T04:10:37.178Z"
+    },
+    {
+      "id": "70b8ba88-0f65-4382-9fd9-1c5e11271a15",
+      "user_id": null,
+      "filename": "test.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785211929534-test.jpg",
+      "file_size": 199,
+      "media_type": "image",
+      "created_at": "2026-07-28T04:12:09.549Z"
+    },
+    {
+      "id": "e025a687-07c9-4ee3-8861-e0394c5ea85a",
+      "user_id": null,
+      "filename": "test.png",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785211950431-test.png",
+      "file_size": 199,
+      "media_type": "image",
+      "created_at": "2026-07-28T04:12:30.433Z"
+    },
+    {
+      "id": "1b90c405-e94b-47ae-87d9-35b3464fd974",
+      "user_id": null,
+      "filename": "test.png",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785211985248-test.png",
+      "file_size": 199,
+      "media_type": "image",
+      "created_at": "2026-07-28T04:13:05.259Z"
+    },
+    {
+      "id": "bb21f17c-4dbe-47c0-a70d-a67dfd3c941f",
+      "user_id": null,
+      "filename": "test.png",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785212029771-test.png",
+      "file_size": 199,
+      "media_type": "image",
+      "created_at": "2026-07-28T04:13:49.773Z"
+    },
+    {
+      "id": "feb63bf5-f397-4a06-839b-d0190fcc51f6",
+      "user_id": null,
+      "filename": "test.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785212241458-test.jpg",
+      "file_size": 1694,
+      "media_type": "image",
+      "created_at": "2026-07-28T04:17:21.464Z"
+    },
+    {
+      "id": "029a202a-67b0-4108-a282-79a1f52debd2",
+      "user_id": null,
+      "filename": "1785212241458-test.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785213642092-1785212241458-test.jpg",
+      "file_size": 1694,
+      "media_type": "image",
+      "created_at": "2026-07-28T04:40:42.097Z"
+    },
+    {
+      "id": "72206179-c710-4f05-91fe-d4f0813d98cc",
+      "user_id": null,
+      "filename": "1785212241458-test.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785213674145-1785212241458-test.jpg",
+      "file_size": 1694,
+      "media_type": "image",
+      "created_at": "2026-07-28T04:41:14.147Z"
+    },
+    {
+      "id": "0c025ca8-5076-4385-8208-086811a040a0",
+      "user_id": null,
+      "filename": "1785212241458-test.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785213728826-1785212241458-test.jpg",
+      "file_size": 1694,
+      "media_type": "image",
+      "created_at": "2026-07-28T04:42:08.829Z"
+    },
+    {
+      "id": "5beb8dc5-56fe-42ac-97db-e15991563689",
+      "user_id": null,
+      "filename": "1785212241458-test.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785213743407-1785212241458-test.jpg",
+      "file_size": 1694,
+      "media_type": "image",
+      "created_at": "2026-07-28T04:42:23.409Z"
+    },
+    {
+      "id": "caa91dc9-8199-4062-aa26-9f866a5f0ffd",
+      "user_id": null,
+      "filename": "1785212241458-test.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785213765222-1785212241458-test.jpg",
+      "file_size": 1694,
+      "media_type": "image",
+      "created_at": "2026-07-28T04:42:45.223Z"
+    },
+    {
+      "id": "b2878163-2479-453a-964d-8a274fcdb2b1",
+      "user_id": null,
+      "filename": "1785212241458-test.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785213915512-1785212241458-test.jpg",
+      "file_size": 1694,
+      "media_type": "image",
+      "created_at": "2026-07-28T04:45:15.518Z"
+    },
+    {
+      "id": "b07a8115-b2c3-4175-8d49-47995dbecce1",
+      "user_id": null,
+      "filename": "spider-man-5120x2880-21603.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785227465233-spider-man-5120x2880-21603.jpg",
+      "file_size": 10379944,
+      "media_type": "image",
+      "created_at": "2026-07-28T08:31:05.243Z"
+    },
+    {
+      "id": "3fda78d6-9448-48f8-ab66-fbffebe12acf",
+      "user_id": null,
+      "filename": "spider-man-5120x2880-21603.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785227475178-spider-man-5120x2880-21603.jpg",
+      "file_size": 10379944,
+      "media_type": "image",
+      "created_at": "2026-07-28T08:31:15.180Z"
+    },
+    {
+      "id": "ee980747-a2b9-4e5e-bb08-25142f3b7c34",
+      "user_id": null,
+      "filename": "spider-man-5120x2880-21603.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785227482695-spider-man-5120x2880-21603.jpg",
+      "file_size": 10379944,
+      "media_type": "image",
+      "created_at": "2026-07-28T08:31:22.697Z"
+    },
+    {
+      "id": "53d1822e-9ea7-498c-8be5-15cc3e79b06a",
+      "user_id": null,
+      "filename": "spider-man-5120x2880-21603.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785227497836-spider-man-5120x2880-21603.jpg",
+      "file_size": 10379944,
+      "media_type": "image",
+      "created_at": "2026-07-28T08:31:37.838Z"
+    },
+    {
+      "id": "6f23f0be-eb5d-4b8b-a72b-eaf478a7cfff",
+      "user_id": null,
+      "filename": "spider-man-5120x2880-21603.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785227533654-spider-man-5120x2880-21603.jpg",
+      "file_size": 10379944,
+      "media_type": "image",
+      "created_at": "2026-07-28T08:32:13.656Z"
+    },
+    {
+      "id": "bc5a3f05-5736-4834-84a1-525af7bd0fc5",
+      "user_id": null,
+      "filename": "test.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785227924094-test.jpg",
+      "file_size": 1694,
+      "media_type": "image",
+      "created_at": "2026-07-28T08:38:44.106Z"
+    },
+    {
+      "id": "d8371237-f647-4966-892c-492b8ee443c4",
+      "user_id": null,
+      "filename": "spider-man-5120x2880-21603.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785227925522-spider-man-5120x2880-21603.jpg",
+      "file_size": 10379944,
+      "media_type": "image",
+      "created_at": "2026-07-28T08:38:45.525Z"
+    },
+    {
+      "id": "5b36f8c5-3358-4c5e-a855-6ee4b2fd2fed",
+      "user_id": null,
+      "filename": "spider-man-5120x2880-21603.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785227929304-spider-man-5120x2880-21603.jpg",
+      "file_size": 10379944,
+      "media_type": "image",
+      "created_at": "2026-07-28T08:38:49.307Z"
+    },
+    {
+      "id": "2b9e7ef1-4b39-42c4-a5d2-580555d3d037",
+      "user_id": null,
+      "filename": "spider-man-5120x2880-21603.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785227995672-spider-man-5120x2880-21603.jpg",
+      "file_size": 10379944,
+      "media_type": "image",
+      "created_at": "2026-07-28T08:39:55.682Z"
+    },
+    {
+      "id": "bb35fdca-a883-4119-ade3-cd20d70c836f",
+      "user_id": null,
+      "filename": "spider-man-5120x2880-21603.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785228200525-spider-man-5120x2880-21603.jpg",
+      "file_size": 10379944,
+      "media_type": "image",
+      "created_at": "2026-07-28T08:43:20.531Z"
+    },
+    {
+      "id": "36196e99-e1b3-47be-90ab-26090c3fd5e1",
+      "user_id": null,
+      "filename": "profile.jpeg.jpeg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785228950189-profile.jpeg.jpeg",
+      "file_size": 112800,
+      "media_type": "image",
+      "created_at": "2026-07-28T08:55:50.197Z"
+    },
+    {
+      "id": "a2f463c5-3bb6-48f7-b8e9-f8c0eb42826f",
+      "user_id": null,
+      "filename": "image 2.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785229278281-image 2.jpg",
+      "file_size": 316424,
+      "media_type": "image",
+      "created_at": "2026-07-28T09:01:18.285Z"
+    },
+    {
+      "id": "6d441bc8-469c-4a8c-a2ea-ee3216fcd42e",
+      "user_id": null,
+      "filename": "WhatsApp Image 2026-07-07 at 6.55.58 AM.jpeg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785229383957-WhatsApp Image 2026-07-07 at 6.55.58 AM.jpeg",
+      "file_size": 141800,
+      "media_type": "image",
+      "created_at": "2026-07-28T09:03:03.966Z"
+    },
+    {
+      "id": "84be8be3-fa4e-434e-98b6-4437cca04bf4",
+      "user_id": null,
+      "filename": "WhatsApp Image 2026-07-17 at 9.50.00 AM.jpeg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785229415296-WhatsApp Image 2026-07-17 at 9.50.00 AM.jpeg",
+      "file_size": 238678,
+      "media_type": "image",
+      "created_at": "2026-07-28T09:03:35.302Z"
+    },
+    {
+      "id": "411292e9-66ba-466e-b679-e6c82c95f998",
+      "user_id": null,
+      "filename": "WIN_20251019_13_00_44_Pro.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785229459514-WIN_20251019_13_00_44_Pro.jpg",
+      "file_size": 154073,
+      "media_type": "image",
+      "created_at": "2026-07-28T09:04:19.517Z"
+    },
+    {
+      "id": "26bac513-9430-4e48-a7b9-8261aa8ac968",
+      "user_id": null,
+      "filename": "WIN_20260324_06_25_21_Pro.jpg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785229520131-WIN_20260324_06_25_21_Pro.jpg",
+      "file_size": 121826,
+      "media_type": "image",
+      "created_at": "2026-07-28T09:05:20.135Z"
+    },
+    {
+      "id": "9e2921bf-732f-4abb-9cc1-86bbe1a91c72",
+      "user_id": null,
+      "filename": "WhatsApp Image 2026-07-17 at 9.50.00 AM.jpeg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785229574498-WhatsApp Image 2026-07-17 at 9.50.00 AM.jpeg",
+      "file_size": 238678,
+      "media_type": "image",
+      "created_at": "2026-07-28T09:06:14.501Z"
+    },
+    {
+      "id": "1b70bfef-ecde-4469-aa3e-cdf1eab25350",
+      "user_id": null,
+      "filename": "WhatsApp Image 2026-07-17 at 9.50.00 AM.jpeg",
+      "file_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\1785229808420-WhatsApp Image 2026-07-17 at 9.50.00 AM.jpeg",
+      "file_size": 238678,
+      "media_type": "image",
+      "created_at": "2026-07-28T09:10:08.430Z"
+    }
+  ],
+  "predictions": [
+    {
+      "id": "e2094f4f-fdf7-4b9f-8015-bd9328473530",
+      "upload_id": "1b70bfef-ecde-4469-aa3e-cdf1eab25350",
+      "prediction": "ORIGINAL / HUMAN",
+      "probability": 48,
+      "confidence": 48,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 0.96,
+      "analysis_summary": "Image inference completed with XceptionNet. The model judged the supplied image with probability 48% of being AI generated.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "modelConf": 0.4760763943195343
+      },
+      "filename": "WhatsApp Image 2026-07-17 at 9.50.00 AM.jpeg",
+      "file_size": 238678,
+      "media_type": "image",
+      "report_id": "fca34c54-eb2a-40fb-bc19-c2c2ffca08a1",
+      "created_at": "2026-07-28T09:10:09.299Z"
+    },
+    {
+      "id": "18dda28c-f9e2-4081-8593-f3f42bc2d4dc",
+      "upload_id": "9e2921bf-732f-4abb-9cc1-86bbe1a91c72",
+      "prediction": "AI GENERATED",
+      "probability": 52,
+      "confidence": 52,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 1.292,
+      "analysis_summary": "Image inference completed with XceptionNet. The model judged the supplied image with probability 52% of being AI generated.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "modelConf": 0.5153647661209106
+      },
+      "filename": "WhatsApp Image 2026-07-17 at 9.50.00 AM.jpeg",
+      "file_size": 238678,
+      "media_type": "image",
+      "report_id": "9dfa18b7-3b05-4bc5-a4e4-9b1e0a2d644e",
+      "created_at": "2026-07-28T09:06:15.720Z"
+    },
+    {
+      "id": "28d472fd-6205-4a61-aca1-619e678e2780",
+      "upload_id": "26bac513-9430-4e48-a7b9-8261aa8ac968",
+      "prediction": "ORIGINAL / HUMAN",
+      "probability": 50,
+      "confidence": 50,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 0.9,
+      "analysis_summary": "Image inference completed with XceptionNet. The model judged the supplied image with probability 50% of being AI generated.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "modelConf": 0.49717673659324646
+      },
+      "filename": "WIN_20260324_06_25_21_Pro.jpg",
+      "file_size": 121826,
+      "media_type": "image",
+      "report_id": "63b29172-1097-47b8-bc61-0f3d567183e7",
+      "created_at": "2026-07-28T09:05:20.980Z"
+    },
+    {
+      "id": "68c23047-00de-41c0-96ac-5079b9603f87",
+      "upload_id": "411292e9-66ba-466e-b679-e6c82c95f998",
+      "prediction": "AI GENERATED",
+      "probability": 50,
+      "confidence": 50,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 1.126,
+      "analysis_summary": "Image inference completed with XceptionNet. The model judged the supplied image with probability 50% of being AI generated.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "modelConf": 0.5043264627456665
+      },
+      "filename": "WIN_20251019_13_00_44_Pro.jpg",
+      "file_size": 154073,
+      "media_type": "image",
+      "report_id": "cb355954-ea7f-4a3d-b255-e3de5f89d610",
+      "created_at": "2026-07-28T09:04:20.571Z"
+    },
+    {
+      "id": "947e7345-a8f6-417e-873f-69f7e774bf06",
+      "upload_id": "84be8be3-fa4e-434e-98b6-4437cca04bf4",
+      "prediction": "AI GENERATED",
+      "probability": 52,
+      "confidence": 52,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 1.574,
+      "analysis_summary": "Image inference completed with XceptionNet. The model judged the supplied image with probability 52% of being AI generated.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "modelConf": 0.5153647661209106
+      },
+      "filename": "WhatsApp Image 2026-07-17 at 9.50.00 AM.jpeg",
+      "file_size": 238678,
+      "media_type": "image",
+      "report_id": "ee691b26-eb20-43f5-92d3-28c65a002551",
+      "created_at": "2026-07-28T09:03:36.707Z"
+    },
+    {
+      "id": "1e629a7e-bf23-4a18-8592-3497b256dedc",
+      "upload_id": "6d441bc8-469c-4a8c-a2ea-ee3216fcd42e",
+      "prediction": "AI GENERATED",
+      "probability": 52,
+      "confidence": 52,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 1.714,
+      "analysis_summary": "Image inference completed with XceptionNet. The model judged the supplied image with probability 52% of being AI generated.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "modelConf": 0.5249044895172119
+      },
+      "filename": "WhatsApp Image 2026-07-07 at 6.55.58 AM.jpeg",
+      "file_size": 141800,
+      "media_type": "image",
+      "report_id": "1caa1c13-a979-4458-9731-c16b8f9d1c7a",
+      "created_at": "2026-07-28T09:03:05.551Z"
+    },
+    {
+      "id": "1715bea6-b646-40f3-aa99-3e17892f2a05",
+      "upload_id": "a2f463c5-3bb6-48f7-b8e9-f8c0eb42826f",
+      "prediction": "AI GENERATED",
+      "probability": 51,
+      "confidence": 51,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 1.956,
+      "analysis_summary": "Image inference completed with XceptionNet. The model judged the supplied image with probability 51% of being AI generated.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "modelConf": 0.5057283639907837
+      },
+      "filename": "image 2.jpg",
+      "file_size": 316424,
+      "media_type": "image",
+      "report_id": "cf6a1077-01af-471f-8daa-8591ea0415e6",
+      "created_at": "2026-07-28T09:01:20.082Z"
+    },
+    {
+      "id": "47bdc5d5-927e-4379-9ad5-e4800e648b83",
+      "upload_id": "36196e99-e1b3-47be-90ab-26090c3fd5e1",
+      "prediction": "ORIGINAL / HUMAN",
+      "probability": 48,
+      "confidence": 48,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 1.524,
+      "analysis_summary": "Image inference completed with XceptionNet. The model judged the supplied image with probability 48% of being AI generated.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "modelConf": 0.4833097457885742
+      },
+      "filename": "profile.jpeg.jpeg",
+      "file_size": 112800,
+      "media_type": "image",
+      "report_id": "ef780c9a-1016-4e33-a444-585296ba95a1",
+      "created_at": "2026-07-28T08:55:51.605Z"
+    },
+    {
+      "id": "efa40084-98ab-43af-bc90-88ae99c98fd1",
+      "upload_id": "bb35fdca-a883-4119-ade3-cd20d70c836f",
+      "prediction": "ORIGINAL / HUMAN",
+      "probability": 46,
+      "confidence": 46,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 1.867,
+      "analysis_summary": "Image inference completed with XceptionNet. The model judged the supplied image with probability 46% of being AI generated.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "modelConf": 0.4551140069961548
+      },
+      "filename": "spider-man-5120x2880-21603.jpg",
+      "file_size": 10379944,
+      "media_type": "image",
+      "report_id": "c101651f-5ea5-4d9d-82b7-9d0b5253e25b",
+      "created_at": "2026-07-28T08:43:21.274Z"
+    },
+    {
+      "id": "7de8706c-3b97-4627-bd66-5252707176b5",
+      "upload_id": "b2878163-2479-453a-964d-8a274fcdb2b1",
+      "prediction": "AI GENERATED",
+      "probability": 99,
+      "confidence": 99,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 0.103,
+      "analysis_summary": "Image heuristic analysis completed. Estimated AI-generated probability 99%.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "heuristicStdGuess": 0.99
+      },
+      "report_id": "7ceb875c-f3bd-404d-8bf4-ae87bb0f2032",
+      "created_at": "2026-07-28T04:45:15.582Z"
+    },
+    {
+      "id": "3ec5b4d6-81b1-4f9e-a2d2-ececbdfdcae4",
+      "upload_id": "caa91dc9-8199-4062-aa26-9f866a5f0ffd",
+      "prediction": "AI GENERATED",
+      "probability": 99,
+      "confidence": 99,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 0.083,
+      "analysis_summary": "Image heuristic analysis completed. Estimated AI-generated probability 99%.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "heuristicStdGuess": 0.99
+      },
+      "report_id": "f845b6ab-7b26-4ea0-8adf-56efe4989b61",
+      "created_at": "2026-07-28T04:42:45.273Z"
+    },
+    {
+      "id": "843bb131-4cde-4176-a93d-2b30208f5c45",
+      "upload_id": "5beb8dc5-56fe-42ac-97db-e15991563689",
+      "prediction": "AI GENERATED",
+      "probability": 99,
+      "confidence": 99,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 0.084,
+      "analysis_summary": "Image heuristic analysis completed. Estimated AI-generated probability 99%.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "heuristicStdGuess": 0.99
+      },
+      "report_id": "11595f58-3506-4749-9345-fcd11628e11f",
+      "created_at": "2026-07-28T04:42:23.459Z"
+    },
+    {
+      "id": "adddcf34-abcb-4b01-9cd4-397383cf8b51",
+      "upload_id": "0c025ca8-5076-4385-8208-086811a040a0",
+      "prediction": "AI GENERATED",
+      "probability": 99,
+      "confidence": 99,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 0.105,
+      "analysis_summary": "Image heuristic analysis completed. Estimated AI-generated probability 99%.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "heuristicStdGuess": 0.99
+      },
+      "report_id": "d58ee510-05bd-4746-823b-2ba3d434d144",
+      "created_at": "2026-07-28T04:42:08.892Z"
+    },
+    {
+      "id": "fd18664b-dbf6-499e-be60-1fbdab73d67f",
+      "upload_id": "72206179-c710-4f05-91fe-d4f0813d98cc",
+      "prediction": "AI GENERATED",
+      "probability": 99,
+      "confidence": 99,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 0.086,
+      "analysis_summary": "Image heuristic analysis completed. Estimated AI-generated probability 99%.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "heuristicStdGuess": 0.99
+      },
+      "report_id": "4882bdcd-dfb6-438f-9721-768b115e0ed6",
+      "created_at": "2026-07-28T04:41:14.198Z"
+    },
+    {
+      "id": "e4c4653f-c371-4b66-821e-00dbfc0f1766",
+      "upload_id": "029a202a-67b0-4108-a282-79a1f52debd2",
+      "prediction": "AI GENERATED",
+      "probability": 99,
+      "confidence": 99,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 0.153,
+      "analysis_summary": "Image heuristic analysis completed. Estimated AI-generated probability 99%.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "heuristicStdGuess": 0.99
+      },
+      "report_id": "f8e061c9-4e84-403f-b614-886999ca022a",
+      "created_at": "2026-07-28T04:40:42.179Z"
+    },
+    {
+      "id": "c80032a9-1d4f-4f23-9b35-0363052f7cee",
+      "upload_id": "feb63bf5-f397-4a06-839b-d0190fcc51f6",
+      "prediction": "AI GENERATED",
+      "probability": 99,
+      "confidence": 99,
+      "model_name": "XceptionNet",
+      "model_version": "v1.0.0",
+      "processing_time": 0.057,
+      "analysis_summary": "Image heuristic analysis completed. Estimated AI-generated probability 99%.",
+      "ai_summary": "Grok API key not configured. Set GROK_API_KEY in the backend .env file.",
+      "ai_risk": "UNKNOWN",
+      "recommendations": "Review the generated report and investigate provenance metadata.",
+      "metrics": {
+        "heuristicStdGuess": 0.99
+      },
+      "report_id": "91632712-227a-4208-b59f-d9617293edd5",
+      "created_at": "2026-07-28T04:17:21.514Z"
+    }
+  ],
+  "reports": [
+    {
+      "id": "fca34c54-eb2a-40fb-bc19-c2c2ffca08a1",
+      "prediction_id": "e2094f4f-fdf7-4b9f-8015-bd9328473530",
+      "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\fca34c54-eb2a-40fb-bc19-c2c2ffca08a1.pdf",
+      "created_at": "2026-07-28T09:10:09.382Z"
+    },
+    {
+      "id": "63b29172-1097-47b8-bc61-0f3d567183e7",
+      "prediction_id": "28d472fd-6205-4a61-aca1-619e678e2780",
+      "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\63b29172-1097-47b8-bc61-0f3d567183e7.pdf",
+      "created_at": "2026-07-28T09:05:21.027Z"
+    },
+    {
+      "id": "cb355954-ea7f-4a3d-b255-e3de5f89d610",
+      "prediction_id": "68c23047-00de-41c0-96ac-5079b9603f87",
+      "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\cb355954-ea7f-4a3d-b255-e3de5f89d610.pdf",
+      "created_at": "2026-07-28T09:04:20.632Z"
+    },
+    {
+      "id": "ee691b26-eb20-43f5-92d3-28c65a002551",
+      "prediction_id": "947e7345-a8f6-417e-873f-69f7e774bf06",
+      "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\ee691b26-eb20-43f5-92d3-28c65a002551.pdf",
+      "created_at": "2026-07-28T09:03:36.818Z"
+    },
+    {
+      "id": "1caa1c13-a979-4458-9731-c16b8f9d1c7a",
+      "prediction_id": "1e629a7e-bf23-4a18-8592-3497b256dedc",
+      "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\1caa1c13-a979-4458-9731-c16b8f9d1c7a.pdf",
+      "created_at": "2026-07-28T09:03:05.649Z"
+    },
+    {
+      "id": "cf6a1077-01af-471f-8daa-8591ea0415e6",
+      "prediction_id": "1715bea6-b646-40f3-aa99-3e17892f2a05",
+      "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\cf6a1077-01af-471f-8daa-8591ea0415e6.pdf",
+      "created_at": "2026-07-28T09:01:20.178Z"
+    },
+    {
+      "id": "ef780c9a-1016-4e33-a444-585296ba95a1",
+      "prediction_id": "47bdc5d5-927e-4379-9ad5-e4800e648b83",
+      "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\ef780c9a-1016-4e33-a444-585296ba95a1.pdf",
+      "created_at": "2026-07-28T08:55:51.661Z"
+    },
+    {
+      "id": "c101651f-5ea5-4d9d-82b7-9d0b5253e25b",
+      "prediction_id": "efa40084-98ab-43af-bc90-88ae99c98fd1",
+      "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\c101651f-5ea5-4d9d-82b7-9d0b5253e25b.pdf",
+      "created_at": "2026-07-28T08:43:21.364Z"
+    },
+    {
+      "id": "7ceb875c-f3bd-404d-8bf4-ae87bb0f2032",
+      "prediction_id": "7de8706c-3b97-4627-bd66-5252707176b5",
+      "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\7ceb875c-f3bd-404d-8bf4-ae87bb0f2032.pdf",
+      "created_at": "2026-07-28T04:45:15.633Z"
+    },
+    {
+      "id": "f845b6ab-7b26-4ea0-8adf-56efe4989b61",
+      "prediction_id": "3ec5b4d6-81b1-4f9e-a2d2-ececbdfdcae4",
+      "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\f845b6ab-7b26-4ea0-8adf-56efe4989b61.pdf",
+      "created_at": "2026-07-28T04:42:45.292Z"
+    },
+    {
+      "id": "11595f58-3506-4749-9345-fcd11628e11f",
+      "prediction_id": "843bb131-4cde-4176-a93d-2b30208f5c45",
+      "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\11595f58-3506-4749-9345-fcd11628e11f.pdf",
+      "created_at": "2026-07-28T04:42:23.475Z"
+    },
+    {
+      "id": "d58ee510-05bd-4746-823b-2ba3d434d144",
+      "prediction_id": "adddcf34-abcb-4b01-9cd4-397383cf8b51",
+      "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\d58ee510-05bd-4746-823b-2ba3d434d144.pdf",
+      "created_at": "2026-07-28T04:42:08.922Z"
+    },
+    {
+      "id": "4882bdcd-dfb6-438f-9721-768b115e0ed6",
+      "prediction_id": "fd18664b-dbf6-499e-be60-1fbdab73d67f",
+      "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\4882bdcd-dfb6-438f-9721-768b115e0ed6.pdf",
+      "created_at": "2026-07-28T04:41:14.221Z"
+    },
+    {
+      "id": "f8e061c9-4e84-403f-b614-886999ca022a",
+      "prediction_id": "e4c4653f-c371-4b66-821e-00dbfc0f1766",
+      "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\f8e061c9-4e84-403f-b614-886999ca022a.pdf",
+      "created_at": "2026-07-28T04:40:42.254Z"
+    },
+    {
+      "id": "91632712-227a-4208-b59f-d9617293edd5",
+      "prediction_id": "c80032a9-1d4f-4f23-9b35-0363052f7cee",
+      "report_path": "C:\\Users\\HP\\Downloads\\project-bolt-sb1-nzsgofrv\\project\\backend\\uploads\\reports\\91632712-227a-4208-b59f-d9617293edd5.pdf",
+      "created_at": "2026-07-28T04:17:21.581Z"
+    }
+  ],
+  "logs": [
+    {
+      "id": "b52eef5e-a385-4df3-96d2-52e24a49709b",
+      "event": "prediction_created",
+      "details": "Prediction e2094f4f-fdf7-4b9f-8015-bd9328473530 -> ORIGINAL / HUMAN",
+      "created_at": "2026-07-28T09:10:09.391Z"
+    },
+    {
+      "id": "82e200c1-d530-4404-934e-d8fb2260d82a",
+      "event": "prediction_created",
+      "details": "Prediction 28d472fd-6205-4a61-aca1-619e678e2780 -> ORIGINAL / HUMAN",
+      "created_at": "2026-07-28T09:05:21.033Z"
+    },
+    {
+      "id": "8a7ff72c-be77-4e5c-998c-fce8611b885d",
+      "event": "prediction_created",
+      "details": "Prediction 68c23047-00de-41c0-96ac-5079b9603f87 -> AI GENERATED",
+      "created_at": "2026-07-28T09:04:20.640Z"
+    },
+    {
+      "id": "82470e08-bcdb-416d-b0b4-e12d57e4de85",
+      "event": "prediction_created",
+      "details": "Prediction 947e7345-a8f6-417e-873f-69f7e774bf06 -> AI GENERATED",
+      "created_at": "2026-07-28T09:03:36.825Z"
+    },
+    {
+      "id": "23d654ff-402b-44c7-be41-f4f76a7b649f",
+      "event": "prediction_created",
+      "details": "Prediction 1e629a7e-bf23-4a18-8592-3497b256dedc -> AI GENERATED",
+      "created_at": "2026-07-28T09:03:05.658Z"
+    },
+    {
+      "id": "6e3a5942-eeaf-49a9-9631-da567158ffbd",
+      "event": "prediction_created",
+      "details": "Prediction 1715bea6-b646-40f3-aa99-3e17892f2a05 -> AI GENERATED",
+      "created_at": "2026-07-28T09:01:20.212Z"
+    },
+    {
+      "id": "4126d4ea-bc75-465a-bcd6-bedafe51c2ae",
+      "event": "prediction_created",
+      "details": "Prediction 47bdc5d5-927e-4379-9ad5-e4800e648b83 -> ORIGINAL / HUMAN",
+      "created_at": "2026-07-28T08:55:51.667Z"
+    },
+    {
+      "id": "ab56d653-1966-4054-8dea-35a78fcd15d6",
+      "event": "prediction_created",
+      "details": "Prediction efa40084-98ab-43af-bc90-88ae99c98fd1 -> ORIGINAL / HUMAN",
+      "created_at": "2026-07-28T08:43:21.369Z"
+    },
+    {
+      "id": "2c77f954-99b1-4101-9d27-ec71edf9acce",
+      "event": "prediction_created",
+      "details": "Prediction 7de8706c-3b97-4627-bd66-5252707176b5 -> AI GENERATED",
+      "created_at": "2026-07-28T04:45:15.637Z"
+    },
+    {
+      "id": "5dbc3e02-ce26-4a7b-8044-f770a71e39bf",
+      "event": "prediction_created",
+      "details": "Prediction 3ec5b4d6-81b1-4f9e-a2d2-ececbdfdcae4 -> AI GENERATED",
+      "created_at": "2026-07-28T04:42:45.296Z"
+    },
+    {
+      "id": "54944261-6dd6-4f59-9704-574d2c88a156",
+      "event": "prediction_created",
+      "details": "Prediction 843bb131-4cde-4176-a93d-2b30208f5c45 -> AI GENERATED",
+      "created_at": "2026-07-28T04:42:23.478Z"
+    },
+    {
+      "id": "9e5a0e74-d42f-4fbb-944b-59dcf520dfd3",
+      "event": "prediction_created",
+      "details": "Prediction adddcf34-abcb-4b01-9cd4-397383cf8b51 -> AI GENERATED",
+      "created_at": "2026-07-28T04:42:08.927Z"
+    },
+    {
+      "id": "8f08401c-319e-4a2d-8244-28dd381bc38d",
+      "event": "prediction_created",
+      "details": "Prediction fd18664b-dbf6-499e-be60-1fbdab73d67f -> AI GENERATED",
+      "created_at": "2026-07-28T04:41:14.225Z"
+    },
+    {
+      "id": "5cac4192-cb46-4bb2-9db2-ed16ec7c74e7",
+      "event": "prediction_created",
+      "details": "Prediction e4c4653f-c371-4b66-821e-00dbfc0f1766 -> AI GENERATED",
+      "created_at": "2026-07-28T04:40:42.258Z"
+    },
+    {
+      "id": "9cba1c05-1f9e-4b20-92b6-bd26bb372c10",
+      "event": "prediction_created",
+      "details": "Prediction c80032a9-1d4f-4f23-9b35-0363052f7cee -> AI GENERATED",
+      "created_at": "2026-07-28T04:17:21.584Z"
+    }
+  ]
+}

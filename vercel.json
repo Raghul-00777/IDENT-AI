@@ -1,0 +1,19 @@
+{
+  "version": 3,
+  "name": "ident-ai",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    },
+    {
+      "src": "api/[...all].js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/[...all].js" },
+    { "src": "/(.*)", "dest": "/dist/$1" }
+  ]
+}

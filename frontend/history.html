@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>History — Deepfake Detection</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div id="app-shell-slot"></div>
+
+  <script type="module">
+    import { initAppShell } from '/js/app-shell.js';
+    import { listPredictions, deletePrediction, logAction } from '/js/api.js';
+    import { showToast, showLoading, hideLoading } from '/js/notify.js';
+
+    const guard = await initAppShell();
+    const main = document.getElementById('main-content');
+    let allPreds = [];
+
+    main.innerHTML = `
+      <div class="page-header">
+        <h1>Detection History</h1>
+        <p>Search, filter, and manage all your past analyses.</p>
+      </div>
+
+      <div class="glass" style="padding:20px;margin-bottom:24px;">
+        <div class="flex gap-12 wrap" style="align-items:flex-end;">
+          <div class="row" style="flex:1;min-width:200px;">
+            <label class="label">Search</label>
+            <input class="input" id="search-input" placeholder="Search by filename..." />
+          </div>
+          <div class="row" style="min-width:160px;">
+            <label class="label">Filter</label>
+            <select class="select" id="filter-select">
+              <option value="all">All Verdicts</option>
+              <option value="ai">AI Generated</option>
+              <option value="human">Original / Human</option>
+            </select>
+          </div>
+          <div class="row" style="min-width:160px;">
+            <label class="label">Sort</label>
+            <select class="select" id="sort-select">
+              <option value="desc">Newest First</option>
+              <option value="asc">Oldest First</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass table-card">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>File</th><th>Type</th><th>Verdict</th><th>Confidence</th><th>Model</th><th>Date</th><th>Actions</th></tr></thead>
+            <tbody id="history-body"><tr><td colspan="7" style="text-align:center;color:var(--muted);">Loading...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    `;
+
+    async function loadHistory() {
+      try {
+        allPreds = await listPredictions({ limit: 200 });
+        render();
+      } catch (err) {
+        showToast('Could not load history: ' + err.message, 'error');
+      }
+    }
+
+    function render() {
+      const search = document.getElementById('search-input').value.toLowerCase();
+      const filter = document.getElementById('filter-select').value;
+      const sort = document.getElementById('sort-select').value;
+      let rows = [...allPreds];
+      if (search) rows = rows.filter(p => p.filename.toLowerCase().includes(search));
+      if (filter === 'ai') rows = rows.filter(p => p.prediction === 'AI GENERATED');
+      if (filter === 'human') rows = rows.filter(p => p.prediction !== 'AI GENERATED');
+      rows.sort((a, b) => sort === 'desc' ? new Date(b.created_at) - new Date(a.created_at) : new Date(a.created_at) - new Date(b.created_at));
+
+      const body = document.getElementById('history-body');
+      if (rows.length === 0) {
+        body.innerHTML = `<tr><td colspan="7" style="text-align:center;color:var(--muted);">No matching records. <a href="/upload.html" style="color:var(--primary);">Run a detection</a>.</td></tr>`;
+        return;
+      }
+      body.innerHTML = rows.map(p => `
+        <tr>
+          <td>${escapeHtml(p.filename)}</td>
+          <td><span style="text-transform:uppercase;font-size:11px;color:var(--muted);">${p.media_type}</span></td>
+          <td><span class="badge ${p.prediction === 'AI GENERATED' ? 'ai' : 'human'}">${p.prediction === 'AI GENERATED' ? 'AI' : 'Human'}</span></td>
+          <td>${p.confidence}%</td>
+          <td style="font-size:12px;color:var(--muted);">${escapeHtml(p.model_name || p.model_used || '—')}</td>
+          <td style="font-size:12px;color:var(--muted);">${new Date(p.created_at).toLocaleString()}</td>
+          <td>
+            <div class="flex gap-12">
+              <a href="/report.html?id=${p.id}" class="btn btn-ghost" style="padding:6px 12px;font-size:12px;">View</a>
+              <button class="btn btn-danger" data-del="${p.id}" style="padding:6px 12px;font-size:12px;">Delete</button>
+            </div>
+          </td>
+        </tr>`).join('');
+
+      body.querySelectorAll('[data-del]').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          if (!confirm('Delete this detection record? This cannot be undone.')) return;
+          const id = btn.dataset.del;
+          showLoading('Deleting...');
+          try {
+            await deletePrediction(id);
+            await logAction('delete_prediction', id);
+            hideLoading();
+            showToast('Record deleted', 'success');
+            loadHistory();
+          } catch (err) {
+            hideLoading();
+            showToast('Delete failed: ' + err.message, 'error');
+          }
+        });
+      });
+    }
+
+    document.getElementById('search-input').addEventListener('input', render);
+    document.getElementById('filter-select').addEventListener('change', render);
+    document.getElementById('sort-select').addEventListener('change', render);
+    await loadHistory();
+    await logAction('view_history');
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    }
+  </script>
+</body>
+</html>

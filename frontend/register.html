@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register — Deepfake Detection</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/index.html" class="nav-logo"><span class="logo-mark">I</span> IDENT AI</a>
+    <div class="nav-actions">
+      <a href="/login.html" class="btn btn-ghost">Login</a>
+      <button class="nav-toggle">☰</button>
+    </div>
+  </nav>
+
+  <div class="auth-wrap">
+    <div class="glass auth-card">
+      <h1>Admin Access Only</h1>
+      <p class="sub">Registration is disabled. Use the admin password to enter the system.</p>
+      <form id="admin-register-form" class="auth-form">
+        <div class="row">
+          <label class="label">Admin Password</label>
+          <input class="input" name="password" type="password" placeholder="Admin password" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-full">Unlock</button>
+      </form>
+      <div class="auth-alt">If you are an administrator, proceed with the password.</div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { signIn } from '/js/api.js';
+    import { showToast } from '/js/notify.js';
+
+    document.getElementById('admin-register-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const password = e.target.password.value;
+      try {
+        await signIn(password);
+        showToast('Admin access granted', 'success');
+        window.location.href = '/dashboard.html';
+      } catch (err) {
+        showToast(err.message || 'Incorrect admin password', 'error');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forgot Password — Deepfake Detection</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/index.html" class="nav-logo"><span class="logo-mark">I</span> IDENT AI</a>
+    <div class="nav-actions">
+      <a href="/login.html" class="btn btn-ghost">Login</a>
+      <button class="nav-toggle">☰</button>
+    </div>
+  </nav>
+
+  <div class="auth-wrap">
+    <div class="glass auth-card">
+      <h1>Forgot Password</h1>
+      <p class="sub">Enter your email to receive a password reset link.</p>
+      <form id="forgot-form" class="auth-form">
+        <div class="row">
+          <label class="label">Email</label>
+          <input class="input" name="email" type="email" placeholder="analyst@forensics.io" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-full">Send Reset Link</button>
+      </form>
+      <div class="auth-alt">Remembered your password? <a href="/login.html">Sign in</a></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initAuthShell } from '/js/auth-shell.js';
+    import { resetPassword } from '/js/api.js';
+    import { showToast, showLoading, hideLoading } from '/js/notify.js';
+
+    const ok = await initAuthShell();
+    if (!ok) throw new Error('redirecting');
+
+    document.getElementById('forgot-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('button[type=submit]');
+      btn.disabled = true;
+      showLoading('Sending reset link...');
+      try {
+        await resetPassword(form.email.value.trim());
+        hideLoading();
+        showToast('If that email exists, a reset link has been sent.', 'success');
+        setTimeout(() => window.location.href = '/login.html', 1500);
+      } catch (err) {
+        hideLoading();
+        showToast(err.message || 'Could not send reset link', 'error');
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

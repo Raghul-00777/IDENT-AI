@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel — Deepfake Detection</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div id="app-shell-slot"></div>
+
+  <script type="module">
+    import { initAppShell } from '/js/app-shell.js';
+    import { signIn, getCurrentUser } from '/js/api.js';
+    import { getAdminStats, logAction } from '/js/api.js';
+    import { showToast, showLoading, hideLoading } from '/js/notify.js';
+    import Chart from 'chart.js/auto';
+
+    const guard = await initAppShell(true, false);
+    const main = document.getElementById('main-content');
+    const currentUser = await getCurrentUser();
+
+    if (!currentUser) {
+      renderPasswordGate();
+    } else {
+      renderAdminConsole();
+    }
+
+    function renderPasswordGate() {
+      main.innerHTML = `
+        <div class="page-header">
+          <h1>Admin Access</h1>
+          <p>Enter the admin password to open the management console.</p>
+        </div>
+        <div class="glass auth-card" style="max-width:420px;margin:0 auto;">
+          <form id="admin-pw-form" class="auth-form">
+            <div class="row">
+              <label class="label">Admin Password</label>
+              <input class="input" name="password" type="password" placeholder="Enter admin password" required autofocus />
+            </div>
+            <button type="submit" class="btn btn-primary w-full">Unlock Console</button>
+          </form>
+          <div class="auth-alt"><a href="/dashboard.html" style="color:var(--primary);text-decoration:none;">Back to dashboard</a></div>
+        </div>
+      `;
+      document.getElementById('admin-pw-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const pw = e.target.password.value;
+        try {
+          await signIn(pw);
+          showToast('Admin access granted', 'success');
+          renderAdminConsole();
+        } catch (err) {
+          showToast(err.message || 'Incorrect admin password', 'error');
+        }
+      });
+    }
+
+    function renderAdminConsole() {
+      main.innerHTML = `
+        <div class="page-header">
+          <h1>Admin Console</h1>
+          <p>System-wide analytics, user management, and audit logs.</p>
+        </div>
+
+        <div class="cards-grid">
+          <div class="glass metric-card primary"><div class="label-row"><span class="label">Total Users</span><div class="icon-box">⊕</div></div><div class="value" id="a-users">—</div><div class="delta">Registered analysts</div></div>
+          <div class="glass metric-card warning"><div class="label-row"><span class="label">Admins</span><div class="icon-box">★</div></div><div class="value" id="a-admins">—</div><div class="delta">Privileged accounts</div></div>
+          <div class="glass metric-card accent"><div class="label-row"><span class="label">Total Predictions</span><div class="icon-box">≡</div></div><div class="value" id="a-preds">—</div><div class="delta">All-time analyses</div></div>
+          <div class="glass metric-card danger"><div class="label-row"><span class="label">AI Detected</span><div class="icon-box">⚠</div></div><div class="value" id="a-ai">—</div><div class="delta">Synthetic media flagged</div></div>
+        </div>
+
+        <div class="charts-grid">
+          <div class="glass chart-card">
+            <h3>Verdict Distribution</h3>
+            <div class="chart-container"><canvas id="chart-pie"></canvas></div>
+          </div>
+          <div class="glass chart-card">
+            <h3>User vs Admin Ratio</h3>
+            <div class="chart-container"><canvas id="chart-bar"></canvas></div>
+          </div>
+        </div>
+
+        <div class="glass table-card">
+          <div class="table-head"><h3>Audit Logs</h3></div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Action</th><th>Details</th><th>Timestamp</th></tr></thead>
+              <tbody id="logs-body"><tr><td colspan="3" style="text-align:center;color:var(--muted);">Loading...</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      `;
+      loadAdminData();
+    }
+
+    async function loadAdminData() {
+      try {
+        const stats = await getAdminStats();
+        document.getElementById('a-users').textContent = stats.totalUsers;
+        document.getElementById('a-admins').textContent = stats.totalAdmins;
+        document.getElementById('a-preds').textContent = stats.totalPredictions;
+        document.getElementById('a-ai').textContent = stats.aiCount;
+
+        new Chart(document.getElementById('chart-pie'), {
+          type: 'doughnut',
+          data: {
+            labels: ['AI Generated', 'Original / Human'],
+            datasets: [{
+              data: [stats.aiCount, stats.humanCount],
+              backgroundColor: ['#FF4B5C', '#00FF88'],
+              borderColor: '#050816', borderWidth: 2,
+            }],
+          },
+          options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: '#A0AEC0' } } } },
+        });
+
+        new Chart(document.getElementById('chart-bar'), {
+          type: 'bar',
+          data: {
+            labels: ['Total Predictions', 'Admins'],
+            datasets: [{
+              data: [stats.totalPredictions, stats.totalAdmins],
+              backgroundColor: ['#5B7FFF', '#FFC857'],
+              borderRadius: 8,
+            }],
+          },
+          options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+              x: { ticks: { color: '#A0AEC0' }, grid: { display: false } },
+              y: { ticks: { color: '#A0AEC0' }, grid: { color: 'rgba(255,255,255,0.05)' }, beginAtZero: true },
+            },
+          },
+        });
+
+        const logsBody = document.getElementById('logs-body');
+        if (stats.logs.length === 0) {
+          logsBody.innerHTML = `<tr><td colspan="3" style="text-align:center;color:var(--muted);">No logs yet.</td></tr>`;
+        } else {
+          logsBody.innerHTML = stats.logs.map(l => `
+            <tr>
+              <td><span class="mono" style="color:var(--primary);font-size:13px;">${escapeHtml(l.action)}</span></td>
+              <td style="font-size:13px;color:var(--muted);">${escapeHtml(l.details || '—')}</td>
+              <td style="font-size:12px;color:var(--muted);">${new Date(l.created_at).toLocaleString()}</td>
+            </tr>`).join('');
+        }
+
+        await logAction('view_admin');
+      } catch (err) {
+        showToast('Could not load admin data: ' + err.message, 'error');
+      }
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    }
+  </script>
+</body>
+</html>

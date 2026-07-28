@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report — Deepfake Detection</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div id="app-shell-slot"></div>
+
+  <script type="module">
+    import { initAppShell } from '/js/app-shell.js';
+    import { getPrediction, logAction } from '/js/api.js';
+    import { showToast, showLoading, hideLoading } from '/js/notify.js';
+    import { generatePdfReport } from '/js/report.js';
+
+    const guard = await initAppShell();
+    const main = document.getElementById('main-content');
+    const params = new URLSearchParams(window.location.search);
+    const predId = params.get('id');
+
+    if (!predId) {
+      main.innerHTML = `<div class="glass" style="padding:40px;text-align:center;"><p style="color:var(--muted);">No report specified. <a href="/history.html" style="color:var(--primary);">Browse history</a>.</p></div>`;
+    } else {
+      main.innerHTML = `<div style="text-align:center;padding:60px;color:var(--muted);">Loading report...</div>`;
+      try {
+        const p = await getPrediction(predId);
+        if (!p) {
+          main.innerHTML = `<div class="glass" style="padding:40px;text-align:center;"><p style="color:var(--muted);">Report not found or you don't have access. <a href="/history.html" style="color:var(--primary);">Back to history</a>.</p></div>`;
+        } else {
+          const reportId = p.report_id || p.reportId || 'RPT-VIEW';
+          renderReport(p, reportId);
+          await logAction('view_report', predId);
+        }
+      } catch (err) {
+        main.innerHTML = `<div class="glass" style="padding:40px;text-align:center;"><p style="color:var(--danger);">Could not load report: ${escapeHtml(err.message)}</p></div>`;
+      }
+    }
+
+    function renderReport(p, reportId) {
+      const isAi = p.prediction === 'AI GENERATED';
+      const recs = Array.isArray(p.recommendations) ? p.recommendations : String(p.recommendations || '').split('\n');
+      const metrics = typeof p.metrics === 'string' ? JSON.parse(p.metrics || '{}') : (p.metrics || {});
+      main.innerHTML = `
+        <div class="page-header">
+          <h1>Forensic Report</h1>
+          <p>Report ID: <span class="mono" style="color:var(--primary);">${escapeHtml(reportId)}</span></p>
+        </div>
+
+        <div class="glass result-panel">
+          <div class="result-verdict ${isAi ? 'ai' : 'human'}">
+            <div class="verdict-icon">${isAi ? '⚠' : '✓'}</div>
+            <h2>${escapeHtml(p.prediction)}</h2>
+            <div class="conf">Confidence: ${p.confidence}% · Probability (AI): ${p.probability}%</div>
+          </div>
+
+          <div class="result-grid">
+            <div class="result-stat"><div class="k">File Name</div><div class="v" style="font-size:14px;">${escapeHtml(p.filename)}</div></div>
+            <div class="result-stat"><div class="k">File Size</div><div class="v">${formatBytes(p.file_size)}</div></div>
+            <div class="result-stat"><div class="k">Media Type</div><div class="v" style="text-transform:capitalize;">${p.media_type}</div></div>
+            <div class="result-stat"><div class="k">Model</div><div class="v" style="font-size:14px;">${escapeHtml(p.model_name || p.model_used || 'Unknown')}</div></div>
+            <div class="result-stat"><div class="k">Processing Time</div><div class="v">${p.processing_time}s</div></div>
+            <div class="result-stat"><div class="k">Date</div><div class="v" style="font-size:13px;">${new Date(p.created_at).toLocaleString()}</div></div>
+          </div>
+
+          <h3 style="margin:24px 0 12px;font-size:16px;">Forensic Metrics</h3>
+          <div class="grid-2">
+            ${Object.entries(metrics).map(([k, m]) => `
+              <div class="result-stat">
+                <div class="k">${k.toUpperCase()}</div>
+                ${Object.entries(m).map(([sk, sv]) => `<div style="font-size:13px;color:var(--muted);margin-top:4px;"><span style="color:var(--text);">${sk}:</span> ${sv}</div>`).join('')}
+              </div>`).join('')}
+          </div>
+
+          <h3 style="margin:24px 0 12px;font-size:16px;">Analysis Summary</h3>
+          <p style="color:var(--muted);font-size:14px;line-height:1.6;">${escapeHtml(p.analysis_summary || '')}</p>
+
+          <h3 style="margin:24px 0 12px;font-size:16px;">Recommendations</h3>
+          <ol style="color:var(--muted);font-size:14px;line-height:1.8;padding-left:20px;">
+            ${recs.map(rec => `<li>${escapeHtml(rec)}</li>`).join('')}
+          </ol>
+
+          <div class="flex gap-12 wrap mt-24">
+            <button class="btn btn-primary" id="dl-pdf">Download PDF</button>
+            <button class="btn btn-ghost" id="print-pdf">Print</button>
+            <button class="btn btn-ghost" id="share-btn">Share</button>
+            <a href="/history.html" class="btn btn-ghost">Back to History</a>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('dl-pdf').addEventListener('click', async () => {
+        showLoading('Generating PDF report...');
+        try {
+          const doc = await generatePdfReport(p, guard, reportId);
+          doc.save(`${reportId}.pdf`);
+          hideLoading();
+          showToast('PDF report downloaded', 'success');
+        } catch (err) {
+          hideLoading();
+          showToast('PDF generation failed: ' + err.message, 'error');
+        }
+      });
+      document.getElementById('print-pdf').addEventListener('click', async () => {
+        showLoading('Preparing print...');
+        try {
+          const doc = await generatePdfReport(p, guard, reportId);
+          hideLoading();
+          doc.autoPrint();
+          window.open(doc.output('bloburl'), '_blank');
+        } catch (err) {
+          hideLoading();
+          showToast('Print failed: ' + err.message, 'error');
+        }
+      });
+      document.getElementById('share-btn').addEventListener('click', async () => {
+        const url = `${window.location.origin}/report.html?id=${p.id}`;
+        try {
+          if (navigator.share) {
+            await navigator.share({ title: 'Deepfake Detection Report', text: `Verdict: ${p.prediction} (${p.confidence}%)`, url });
+          } else {
+            await navigator.clipboard.writeText(url);
+            showToast('Report link copied to clipboard', 'success');
+          }
+        } catch (e) {
+          showToast('Share cancelled', 'info');
+        }
+      });
+    }
+
+    function formatBytes(bytes) {
+      if (!bytes) return '0 B';
+      const units = ['B', 'KB', 'MB', 'GB'];
+      let i = 0, n = bytes;
+      while (n >= 1024 && i < units.length - 1) { n /= 1024; i++; }
+      return `${n.toFixed(2)} ${units[i]}`;
+    }
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    }
+  </script>
+</body>
+</html>

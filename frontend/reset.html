@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reset Password — Deepfake Detection</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/index.html" class="nav-logo"><span class="logo-mark">I</span> IDENT AI</a>
+    <div class="nav-actions">
+      <a href="/login.html" class="btn btn-ghost">Login</a>
+      <button class="nav-toggle">☰</button>
+    </div>
+  </nav>
+
+  <div class="auth-wrap">
+    <div class="glass auth-card">
+      <h1>Reset Password</h1>
+      <p class="sub">Choose a new password for your account.</p>
+      <form id="reset-form" class="auth-form">
+        <div class="row">
+          <label class="label">New Password</label>
+          <input class="input" name="password" type="password" placeholder="Min. 8 characters" minlength="8" required />
+        </div>
+        <div class="row">
+          <label class="label">Confirm Password</label>
+          <input class="input" name="confirm" type="password" placeholder="Repeat password" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-full">Update Password</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initShell } from '/js/shell.js';
+    import { updatePassword } from '/js/api.js';
+    import { showToast, showLoading, hideLoading } from '/js/notify.js';
+    initShell();
+
+    document.getElementById('reset-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      if (form.password.value !== form.confirm.value) {
+        showToast('Passwords do not match', 'error');
+        return;
+      }
+      const btn = form.querySelector('button[type=submit]');
+      btn.disabled = true;
+      showLoading('Updating password...');
+      try {
+        await updatePassword(form.password.value);
+        hideLoading();
+        showToast('Password updated. Please sign in.', 'success');
+        setTimeout(() => window.location.href = '/login.html', 1200);
+      } catch (err) {
+        hideLoading();
+        showToast(err.message || 'Could not reset password', 'error');
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
