@@ -34,6 +34,8 @@ The backend is designed to run on Render as a separate web service.
    - `JWT_SECRET=ident-ai-secret`
    - `GROK_API_URL=https://api.grok.com/v1/responses`
    - `GROK_API_KEY=` (optional)
+      - To enable Grok AI enrichment set `GROK_API_KEY` to your Grok API key (secret).
+      - Also ensure Render allows outbound DNS/HTTPS to `api.grok.com`.
 
 ## Frontend to Backend Integration
 
@@ -57,3 +59,24 @@ This allows the frontend to point directly at the Render backend.
 - The backend uses temp storage for uploads and reports on Render/Vercel.
 - Reports are generated in memory and stored briefly in the backend temp folder.
 - If you want Grok AI enrichment, set `GROK_API_KEY` in Render.
+
+## Enabling Grok AI (production)
+
+1. In your Render service, open the Service > Environment tab and add the following secrets:
+
+   - `GROK_API_KEY` — your Grok API key (e.g. `gsk_...`).
+   - `GROK_API_URL` — leave as `https://api.grok.com/v1/responses` unless instructed otherwise by Grok support.
+   - `CORS_ORIGINS` — set to the frontend origin(s), e.g. `https://ident-ai-nine.vercel.app`.
+
+2. After saving env vars, trigger a redeploy from the Render dashboard (Deploys → Manual Deploy).
+
+3. Verify the endpoint by running:
+
+```bash
+curl -i https://<your-backend-host>/api/health
+curl -i -F "file=@frontend/assets/test.jpg" https://<your-backend-host>/api/detection/analyze
+```
+
+4. If `/api/detection/analyze` returns 500 with a Grok-related message, check that Render's network policy allows outbound DNS resolution and HTTPS to `api.grok.com`.
+
+Security note: do NOT commit your `backend/.env` containing `GROK_API_KEY` to source control; add it only in Render secrets.
