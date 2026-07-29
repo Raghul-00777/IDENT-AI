@@ -31,8 +31,9 @@ export const CONFIG = {
   XCEPTION_MODEL_PATH: process.env.XCEPTION_MODEL_PATH
     ? path.resolve(__dirname, '..', process.env.XCEPTION_MODEL_PATH)
     : path.resolve(runtimeRoot, 'models', 'xception', 'model.json'),
-  GROK_API_URL: process.env.GROK_API_URL || 'https://api.grok.com/v1/responses',
-  GROK_API_KEY: process.env.GROK_API_KEY || '',
+  // Grok AI integration removed — no external AI key required by default.
+  GROK_API_URL: '',
+  GROK_API_KEY: '',
   CORS_ORIGINS: process.env.CORS_ORIGINS
     ? process.env.CORS_ORIGINS.split(',').map((origin) => origin.trim())
     : '*',

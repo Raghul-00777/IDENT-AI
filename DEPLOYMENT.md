@@ -34,8 +34,7 @@ The backend is designed to run on Render as a separate web service.
    - `JWT_SECRET=ident-ai-secret`
    - `GROK_API_URL=https://api.grok.com/v1/responses`
    - `GROK_API_KEY=` (optional)
-      - To enable Grok AI enrichment set `GROK_API_KEY` to your Grok API key (secret).
-      - Also ensure Render allows outbound DNS/HTTPS to `api.grok.com`.
+      - Grok AI integration has been removed from the backend. No external AI key is required.
 
 ## Frontend to Backend Integration
 
